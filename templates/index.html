@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Indian Railways Train Enquiry System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Welcome Popup -->
+
+    <div class="welcome-overlay" id="welcomeOverlay">
+
+        <div class="welcome-box">
+
+            <div class="welcome-icon">
+                🇮🇳 🚆
+            </div>
+
+            <h1>
+                Welcome to
+            </h1>
+
+            <h2>
+                Indian Railways Train Enquiry System
+            </h2>
+
+            <p>
+                Find available trains between stations
+                and view estimated journey duration.
+            </p>
+
+            <button
+                class="welcome-btn"
+                onclick="enterSystem()">
+                Enter Train Enquiry
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Navigation -->
+
+    <nav class="navbar">
+
+        <div class="navbar-content">
+
+            <div class="navbar-brand">
+
+                <div class="brand-icon">
+                    🚆
+                </div>
+
+                <div class="brand-text">
+                    <div class="brand-title">
+                        Indian Railways
+                    </div>
+
+                    <div class="brand-subtitle">
+                        Train Enquiry System
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="navbar-tagline">
+                Connecting People • Connecting India
+            </div>
+
+
+            <a href="/" class="home-link">
+                🏠 Home
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Main Content -->
+
+    <div class="main-wrapper">
+
+        <div class="main-card">
+
+
+            <!-- Left Railway Section -->
+
+            <div class="railway-section">
+
+                <div class="railway-icon-large">
+                    🚆
+                </div>
+
+                <h1>
+                    Indian Railways ● भारतीय रेल
+                </h1>
+
+                <h2>
+                    Train Enquiry System ● रेलगाड़ी पूछताछ प्रणाली
+                </h2>
+
+                <p>
+                    Plan your journey by finding available
+                    trains between your source and destination
+                    stations.
+                </p>
+
+
+                <div class="railway-track">
+                    <!-- Upper Track -->
+                    <div class="rail-line upper-line"></div>
+                    <span class="train-upper">🚆</span>
+
+                    <!-- Lower Track -->
+                    <div class="rail-line lower-line"></div>
+                    <span class="train-lower">🚆</span>
+
+                </div>
+
+
+                <div class="india-text">
+                    Connecting Stations Across India 🇮🇳
+                </div>
+
+            </div>
+
+
+            <!-- Search Section -->
+
+            <div class="search-section">
+
+                <div class="search-heading">
+
+                    <h2>
+                        Search Your Train
+                    </h2>
+
+                    <p>
+                        Enter your journey details below
+                    </p>
+
+                </div>
+
+
+                <form action="/search" method="POST">
+
+
+                    <div class="form-group">
+
+                        <label for="source">
+                            Source Station
+                        </label>
+
+                        <input
+                            type="text"
+                            name="source"
+                            id="source"
+                            list="station-list"
+                            placeholder="Search source station..."
+                            autocomplete="off"
+                            required>
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="destination">
+                            Destination Station
+                        </label>
+
+                        <input
+                            type="text"
+                            name="destination"
+                            id="destination"
+                            list="station-list"
+                            placeholder="Search destination station..."
+                            autocomplete="off"
+                            required>
+
+                    </div>
+                    
+                    <datalist id="station-list">
+
+                        {% for station in stations %}
+
+                        <option value="{{ station }}"></option>
+
+                        {% endfor %}
+
+                    </datalist>
+
+                    <button
+                        type="submit"
+                        class="search-btn">
+
+                        🔍 Search Trains
+
+                    </button>
+
+                </form>
+
+
+                <div class="search-info">
+
+                    <span>✓</span>
+                    Available direct trains
+
+                    <br>
+
+                    <span>✓</span>
+                    Estimated journey duration
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="tricolor-line">
+
+            <div class="saffron"></div>
+            <div class="white"></div>
+            <div class="green"></div>
+
+        </div>
+
+        <p>
+            Train Enquiry System | Internship Capstone Project
+        </p>
+
+    </footer>
+
+
+    <!-- Welcome Popup Script -->
+
+    <script>
+
+        function enterSystem() {
+
+            const overlay =
+                document.getElementById("welcomeOverlay");
+
+            overlay.classList.add("hide");
+
+        }
+
+    </script>
+
+</body>
+
+</html>

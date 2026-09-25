@@ -1,0 +1,1021 @@
+/* ==============================
+   GLOBAL
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #eef3f8;
+    color: #1d3557;
+    min-height: 100vh;
+}
+
+
+/* ==============================
+   NAVBAR
+================================ */
+
+.navbar {
+    width: 100%;
+
+    background: linear-gradient(
+        90deg,
+        #172b4d,
+        #1d3557,
+        #274c77
+    );
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.15);
+
+    position: relative;
+}
+
+
+/* Indian tricolour accent */
+
+.navbar::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 4px;
+
+    background: linear-gradient(
+        to right,
+        #ff9933 33.33%,
+        white 33.33%,
+        white 66.66%,
+        #138808 66.66%
+    );
+}
+
+
+/* Navbar content */
+
+.navbar-content {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 13px 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+/* Brand */
+
+.navbar-brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: white;
+}
+
+
+.brand-icon {
+
+    font-size: 35px;
+
+    line-height: 1;
+}
+
+
+.brand-title {
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    letter-spacing: 0.3px;
+}
+
+
+.brand-subtitle {
+
+    font-size: 12px;
+
+    color: #dce7f2;
+
+    margin-top: 2px;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* Tagline */
+
+.navbar-tagline {
+
+    color: #e8eef5;
+
+    font-size: 14px;
+
+    font-style: italic;
+
+    letter-spacing: 0.4px;
+
+    opacity: 0.95;
+}
+
+
+/* Home button */
+
+.home-link {
+
+    text-decoration: none;
+
+    color: white;
+
+    font-weight: bold;
+
+    padding: 9px 17px;
+
+    border: 1px solid rgba(255,255,255,0.35);
+
+    border-radius: 7px;
+
+    transition: 0.2s;
+}
+
+
+.home-link:hover {
+
+    background: white;
+
+    color: #1d3557;
+
+    transform: translateY(-1px);
+}
+
+
+/* Responsive */
+
+@media (max-width: 800px) {
+
+    .navbar-tagline {
+        display: none;
+    }
+
+    .navbar-content {
+        padding: 13px 18px;
+    }
+
+    .brand-title {
+        font-size: 18px;
+    }
+
+    .brand-icon {
+        font-size: 29px;
+    }
+
+}
+
+
+/* ==============================
+   MAIN LAYOUT
+================================ */
+
+.main-wrapper {
+    width: 92%;
+    max-width: 1200px;
+    margin: 55px auto;
+}
+
+.main-card {
+    background: white;
+
+    min-height: 500px;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 12px 35px rgba(29, 53, 87, 0.15);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+/* ==============================
+   LEFT RAILWAY SECTION
+================================ */
+
+.railway-section {
+    background: linear-gradient(
+        145deg,
+        #1d3557,
+        #274c77
+    );
+
+    color: white;
+
+    padding: 60px 45px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.railway-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 153, 51, 0.12);
+
+    top: -100px;
+    left: -100px;
+}
+
+.railway-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    background: rgba(19, 136, 8, 0.10);
+
+    bottom: -150px;
+    right: -120px;
+}
+
+.railway-icon-large {
+    font-size: 70px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.railway-section h1 {
+    font-size: 38px;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+}
+
+.railway-section h2 {
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.railway-section p {
+    max-width: 430px;
+    line-height: 1.7;
+    color: #e4edf6;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ==============================
+   TWO RAILWAY TRACKS
+================================ */
+
+.railway-track {
+    margin-top: 45px;
+
+    height: 85px;
+
+    position: relative;
+}
+
+
+/* Railway Lines */
+
+.rail-line {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    height: 4px;
+
+    background: #ddd;
+}
+
+
+/* Upper Track */
+
+.upper-line {
+    top: 20px;
+}
+
+
+/* Lower Track */
+
+.lower-line {
+    top: 62px;
+}
+
+
+/* ==============================
+   TRAINS
+================================ */
+
+.railway-track span {
+    position: absolute;
+
+    font-size: 38px;
+
+    z-index: 2;
+}
+
+
+/* Upper train:
+   LEFT → RIGHT */
+
+.train-upper {
+    top: -9px;
+
+    left: 5%;
+
+    animation:
+        trainUpper 5s infinite linear;
+}
+
+
+/* Lower train:
+   RIGHT → LEFT */
+
+.train-lower {
+    top: 33px;
+
+    right: 5%;
+
+    transform: scaleX(-1);
+
+    animation:
+        trainLower 5s infinite linear;
+}
+
+
+/* ==============================
+   ANIMATIONS
+================================ */
+
+@keyframes trainUpper {
+
+    0% {
+        left: 5%;
+    }
+
+    100% {
+        left: 80%;
+    }
+
+}
+
+
+@keyframes trainLower {
+
+    0% {
+        right: 5%;
+    }
+
+    100% {
+        right: 80%;
+    }
+
+}
+
+
+.india-text {
+    margin-top: 25px;
+
+    font-weight: bold;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* ==============================
+   SEARCH SECTION
+================================ */
+
+.search-section {
+    padding: 60px 50px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.search-heading h2 {
+    font-size: 30px;
+
+    color: #1d3557;
+
+    margin-bottom: 8px;
+}
+
+.search-heading p {
+    color: #64748b;
+
+    margin-bottom: 35px;
+}
+
+
+/* ==============================
+   FORM
+================================ */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+
+    font-weight: bold;
+
+    color: #1d3557;
+
+    margin-bottom: 8px;
+}
+
+
+/* ==============================
+   SEARCHABLE STATION INPUT
+================================ */
+
+/* Source & Destination Station Boxes */
+
+#source,
+#destination {
+    width: 100%;
+    height: 50px;
+
+    box-sizing: border-box;
+
+    padding: 14px 16px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    background: #f8fafc;
+
+    font-size: 15px;
+
+    font-family: Arial, sans-serif;
+
+    color: #334155;
+
+    line-height: normal;
+
+    transition: 0.2s;
+}
+
+
+/* Same focus effect for both */
+
+#source:focus,
+#destination:focus {
+    outline: none;
+
+    border-color: #1d3557;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 3px rgba(29, 53, 87, 0.12);
+}
+
+
+/* Same placeholder appearance for both */
+
+#source::placeholder,
+#destination::placeholder {
+    color: #94a3b8;
+
+    opacity: 1;
+
+    font-size: 15px;
+
+    font-family: Arial, sans-serif;
+
+    text-align: left;
+}
+
+
+/* ==============================
+   SEARCH BUTTON
+================================ */
+
+.search-btn {
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: linear-gradient(
+        90deg,
+        #1d3557,
+        #274c77
+    );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.search-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 15px rgba(29, 53, 87, 0.25);
+}
+
+
+/* ==============================
+   SEARCH INFO
+================================ */
+
+.search-info {
+    margin-top: 25px;
+
+    line-height: 2;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+.search-info span {
+    color: #138808;
+
+    font-weight: bold;
+}
+
+
+/* ==============================
+   WELCOME POPUP
+================================ */
+
+.welcome-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(10, 25, 45, 0.78);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 9999;
+
+    transition: opacity 0.4s ease;
+}
+
+.welcome-overlay.hide {
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+.welcome-box {
+    width: 90%;
+
+    max-width: 520px;
+
+    background: white;
+
+    padding: 45px 40px;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.3);
+
+    border-top: 6px solid #ff9933;
+
+    border-bottom: 6px solid #138808;
+}
+
+.welcome-icon {
+    font-size: 55px;
+
+    margin-bottom: 15px;
+}
+
+.welcome-box h1 {
+    font-size: 38px;
+
+    color: #1d3557;
+
+    margin-bottom: 8px;
+}
+
+.welcome-box h2 {
+    font-size: 23px;
+
+    color: #274c77;
+
+    margin-bottom: 18px;
+}
+
+.welcome-box p {
+    color: #64748b;
+
+    line-height: 1.6;
+
+    margin-bottom: 30px;
+}
+
+.welcome-btn {
+    padding: 13px 28px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #1d3557;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.welcome-btn:hover {
+    background: #274c77;
+
+    transform: translateY(-2px);
+}
+
+
+/* ==============================
+   FOOTER
+================================ */
+
+footer {
+    text-align: center;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    margin-bottom: 25px;
+}
+
+.tricolor-line {
+    width: 100%;
+
+    height: 5px;
+
+    display: flex;
+
+    margin-bottom: 12px;
+}
+
+.tricolor-line .saffron {
+    width: 33.33%;
+
+    background: #ff9933;
+}
+
+.tricolor-line .white {
+    width: 33.33%;
+
+    background: white;
+}
+
+.tricolor-line .green {
+    width: 33.33%;
+
+    background: #138808;
+}
+
+
+/* ==============================
+   RESPONSIVE MAIN PAGE
+================================ */
+
+@media (max-width: 800px) {
+
+    .main-card {
+        grid-template-columns: 1fr;
+    }
+
+    .railway-section {
+        padding: 45px 30px;
+    }
+
+    .search-section {
+        padding: 40px 30px;
+    }
+
+    .railway-section h1 {
+        font-size: 30px;
+    }
+
+    .navbar-title {
+        font-size: 18px;
+    }
+
+}
+
+
+/* ==============================
+   RESULTS PAGE
+================================ */
+
+.results-wrapper {
+    width: 80%;
+
+    max-width: 1250px;
+
+    margin: 45px auto;
+}
+
+.results-header {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.results-header h1 {
+    font-size: 34px;
+
+    color: #1d3557;
+
+    margin-bottom: 8px;
+}
+
+.results-header p {
+    color: #64748b;
+
+    font-size: 16px;
+}
+
+.results-card {
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 10px 30px rgba(29, 53, 87, 0.12);
+
+    border: 1px solid #e1e7ee;
+}
+
+.results-summary {
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+.results-summary h2 {
+    color: #1d3557;
+
+    font-size: 24px;
+
+    margin-bottom: 6px;
+}
+
+.results-summary p {
+    color: #64748b;
+}
+
+
+/* ==============================
+   RESULTS TABLE
+================================ */
+
+.table-container {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+.results-table {
+    width: 100%;
+
+    border-collapse: separate;
+
+    border-spacing: 0;
+
+    overflow: hidden;
+
+    border: 1px solid #dbe3ec;
+
+    border-radius: 10px;
+}
+
+.results-table th {
+    background: #1d3557;
+
+    color: white;
+
+    padding: 16px 14px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    white-space: nowrap;
+}
+
+.results-table td {
+    padding: 15px 14px;
+
+    text-align: center;
+
+    border-bottom: 1px solid #e5eaf0;
+
+    color: #334155;
+
+    white-space: nowrap;
+}
+
+.results-table tbody tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+.results-table tbody tr:hover {
+    background: #eef4fa;
+}
+
+.results-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* ==============================
+   TRAIN NUMBER
+================================ */
+
+.train-number {
+    font-weight: bold;
+
+    color: #1d3557 !important;
+}
+
+
+/* ==============================
+   JOURNEY DURATION
+================================ */
+
+.duration {
+    font-weight: bold;
+
+    color: #138808 !important;
+}
+
+
+/* ==============================
+   RESULTS FOOTER
+================================ */
+
+.results-footer {
+    text-align: center;
+
+    margin-top: 28px;
+}
+
+
+/* ==============================
+   NO RESULTS
+================================ */
+
+.no-results {
+    text-align: center;
+
+    padding: 60px 30px;
+}
+
+.no-results-icon {
+    font-size: 55px;
+
+    margin-bottom: 15px;
+}
+
+.no-results h2 {
+    color: #1d3557;
+
+    margin-bottom: 12px;
+}
+
+.no-results p {
+    color: #64748b;
+
+    margin-bottom: 25px;
+}
+
+
+/* ==============================
+   RESULTS MOBILE
+================================ */
+
+@media (max-width: 800px) {
+
+    .results-wrapper {
+        width: 94%;
+    }
+
+    .results-card {
+        padding: 18px;
+    }
+
+    .results-header h1 {
+        font-size: 28px;
+    }
+
+}
+
+/* ==============================
+   BACK / SEARCH AGAIN BUTTON
+================================ */
+
+.back-btn {
+    display: inline-block;
+
+    text-decoration: none;
+
+    background: #1d3557;
+
+    color: white;
+
+    padding: 11px 22px;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.back-btn:hover {
+    background: #274c77;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 12px rgba(29, 53, 87, 0.20);
+}

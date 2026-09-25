@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Train Search Results</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+    <!-- ==============================
+         NAVBAR
+    =============================== -->
+
+    <nav class="navbar">
+
+        <div class="navbar-content">
+
+            <div class="navbar-brand">
+
+                <div class="brand-icon">
+                    🚆
+                </div>
+
+                <div class="brand-text">
+
+                    <div class="brand-title">
+                        Indian Railways
+                    </div>
+
+                    <div class="brand-subtitle">
+                        Train Enquiry System
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="navbar-tagline">
+                Connecting People • Connecting India
+            </div>
+
+
+            <a href="/" class="home-link">
+                🏠 Home
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ==============================
+         RESULTS SECTION
+    =============================== -->
+
+    <div class="results-wrapper">
+
+
+        <!-- Results Heading -->
+
+        <div class="results-header">
+
+            <h1>
+                Train Search Results
+            </h1>
+
+            <p>
+                Available trains from
+                <strong>{{ source }}</strong>
+                →
+                <strong>{{ destination }}</strong>
+            </p>
+
+        </div>
+
+
+
+        <!-- ==============================
+             ERROR / VALIDATION MESSAGE
+        =============================== -->
+
+        {% if error %}
+
+        <div class="results-card no-results">
+
+            <div class="no-results-icon">
+                ⚠️
+            </div>
+
+            <h2>
+                Search Error
+            </h2>
+
+            <p>
+                {{ error }}
+            </p>
+
+            <a href="/" class="back-btn">
+                ← Search Another Route
+            </a>
+
+        </div>
+
+
+        <!-- ==============================
+             TRAINS FOUND
+        =============================== -->
+
+        {% elif trains %}
+
+        <div class="results-card">
+
+
+            <div class="results-summary">
+
+                <h2>
+                    {{ trains|length }} Train(s) Found
+                </h2>
+
+                <p>
+                    Direct trains available for the selected route
+                </p>
+
+            </div>
+
+
+
+            <!-- Results Table -->
+
+            <div class="table-container">
+
+                <table class="results-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Train No.
+                            </th>
+
+                            <th>
+                                Source
+                            </th>
+
+                            <th>
+                                Departure
+                            </th>
+
+                            <th>
+                                Destination
+                            </th>
+
+                            <th>
+                                Arrival
+                            </th>
+
+                            <th>
+                                Journey Duration
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        {% for train in trains %}
+
+                        <tr>
+
+                            <td class="train-number">
+                                {{ train.Train_No }}
+                            </td>
+
+                            <td>
+                                {{ train.Source_Station }}
+                            </td>
+
+                            <td>
+                                {{ train.Source_Departure }}
+                            </td>
+
+                            <td>
+                                {{ train.Destination_Station }}
+                            </td>
+
+                            <td>
+                                {{ train.Destination_Arrival }}
+                            </td>
+
+                            <td class="duration">
+                                {{ train.Journey_Duration }}
+                            </td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+
+            <!-- Search Again -->
+
+            <div class="results-footer">
+
+                <a href="/" class="back-btn">
+                    ← Search Another Route
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- ==============================
+             NO DIRECT TRAINS
+        =============================== -->
+
+        {% else %}
+
+        <div class="results-card no-results">
+
+            <div class="no-results-icon">
+                🚆
+            </div>
+
+            <h2>
+                No Direct Trains Found
+            </h2>
+
+            <p>
+
+                No train in the dataset travels from
+                <strong>{{ source }}</strong>
+                to
+                <strong>{{ destination }}</strong>.
+
+            </p>
+
+            <a href="/" class="back-btn">
+                ← Search Another Route
+            </a>
+
+        </div>
+
+        {% endif %}
+
+
+    </div>
+
+
+
+    <!-- ==============================
+         FOOTER
+    =============================== -->
+
+    <footer>
+
+        <div class="tricolor-line">
+
+            <div class="saffron"></div>
+
+            <div class="white"></div>
+
+            <div class="green"></div>
+
+        </div>
+
+
+        <p>
+            Train Enquiry System | Internship Capstone Project
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
