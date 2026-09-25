@@ -1,4 +1,4 @@
-\# Indian Railways Train Enquiry System
+\# # Train Schedule Analysis and Interactive Route Enquiry System
 
 
 
@@ -6,7 +6,7 @@
 
 
 
-The Indian Railways Train Enquiry System is an interactive web application developed as the final capstone project of the Sysslan IT Solutions internship.
+The Train Schedule Analysis and Interactive Route Enquiry System is an interactive web application developed as the final capstone project of the Sysslan IT Solutions internship.
 
 
 
