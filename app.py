@@ -6,16 +6,8 @@ import os
 
 app = Flask(__name__)
 
-# ==========================================
-# LOAD ENVIRONMENT VARIABLES
-# ==========================================
-
 load_dotenv()
 
-
-# ==========================================
-# DATABASE CONNECTION
-# ==========================================
 
 def get_db_connection():
 
@@ -37,10 +29,6 @@ def get_db_connection():
 
         return None
 
-
-# ==========================================
-# HOME PAGE
-# ==========================================
 
 @app.route("/")
 def home():
@@ -93,19 +81,12 @@ def home():
         )
 
 
-# ==========================================
-# TRAIN SEARCH
-# ==========================================
-
 @app.route("/search", methods=["POST"])
 def search_trains():
 
     source = request.form.get("source", "").strip()
     destination = request.form.get("destination", "").strip()
 
-    # ------------------------------------------
-    # BASIC VALIDATION
-    # ------------------------------------------
 
     if not source or not destination:
 
@@ -118,10 +99,6 @@ def search_trains():
         )
 
 
-    # ------------------------------------------
-    # SAME STATION VALIDATION
-    # ------------------------------------------
-
     if source.lower() == destination.lower():
 
         return render_template(
@@ -132,10 +109,6 @@ def search_trains():
             error="Source and destination stations cannot be the same."
         )
 
-
-    # ------------------------------------------
-    # DATABASE CONNECTION
-    # ------------------------------------------
 
     db = get_db_connection()
 
@@ -157,10 +130,6 @@ def search_trains():
         cursor = db.cursor(dictionary=True)
 
 
-        # ------------------------------------------
-        # CHECK SOURCE STATION
-        # ------------------------------------------
-
         cursor.execute("""
             SELECT COUNT(*) AS station_count
             FROM train_schedule
@@ -168,11 +137,6 @@ def search_trains():
         """, (source,))
 
         source_exists = cursor.fetchone()["station_count"]
-
-
-        # ------------------------------------------
-        # CHECK DESTINATION STATION
-        # ------------------------------------------
 
         cursor.execute("""
             SELECT COUNT(*) AS station_count
@@ -183,10 +147,6 @@ def search_trains():
         destination_exists = cursor.fetchone()["station_count"]
 
 
-        # ------------------------------------------
-        # INVALID STATION
-        # ------------------------------------------
-
         if source_exists == 0 or destination_exists == 0:
 
             return render_template(
@@ -196,11 +156,6 @@ def search_trains():
                 destination=destination,
                 error="One or both selected stations were not found in the train schedule."
             )
-
-
-        # ------------------------------------------
-        # SEARCH DIRECT TRAINS
-        # ------------------------------------------
 
         query = """
             SELECT
@@ -257,10 +212,6 @@ def search_trains():
         trains = cursor.fetchall()
 
 
-        # ------------------------------------------
-        # DISPLAY RESULTS
-        # ------------------------------------------
-
         return render_template(
             "results.html",
             trains=trains,
@@ -291,10 +242,6 @@ def search_trains():
             db.close()
 
 
-# ==========================================
-# APPLICATION ERROR HANDLER
-# ==========================================
-
 @app.errorhandler(500)
 def internal_error(error):
 
@@ -305,11 +252,6 @@ def internal_error(error):
         destination="",
         error="An unexpected error occurred. Please try again."
     ), 500
-
-
-# ==========================================
-# RUN APPLICATION
-# ==========================================
 
 if __name__ == "__main__":
 

@@ -1,6 +1,4 @@
-/* ==============================
-   GLOBAL
-================================ */
+/* GLOBAL*/
 
 * {
     margin: 0;
@@ -16,9 +14,7 @@ body {
 }
 
 
-/* ==============================
-   NAVBAR
-================================ */
+/* NAVBAR*/
 
 .navbar {
     width: 100%;
@@ -191,9 +187,7 @@ body {
 }
 
 
-/* ==============================
-   MAIN LAYOUT
-================================ */
+/* MAIN LAYOUT*/
 
 .main-wrapper {
     width: 92%;
@@ -218,9 +212,7 @@ body {
 }
 
 
-/* ==============================
-   LEFT RAILWAY SECTION
-================================ */
+/* LEFT RAILWAY SECTION*/
 
 .railway-section {
     background: linear-gradient(
@@ -305,9 +297,7 @@ body {
 }
 
 
-/* ==============================
-   TWO RAILWAY TRACKS
-================================ */
+/* TWO RAILWAY TRACKS*/
 
 .railway-track {
     margin-top: 45px;
@@ -346,9 +336,7 @@ body {
 }
 
 
-/* ==============================
-   TRAINS
-================================ */
+/* TRAINS*/
 
 .railway-track span {
     position: absolute;
@@ -359,8 +347,7 @@ body {
 }
 
 
-/* Upper train:
-   LEFT → RIGHT */
+/* Upper train: LEFT → RIGHT */
 
 .train-upper {
     top: -9px;
@@ -372,8 +359,7 @@ body {
 }
 
 
-/* Lower train:
-   RIGHT → LEFT */
+/* Lower train: RIGHT → LEFT */
 
 .train-lower {
     top: 33px;
@@ -387,9 +373,7 @@ body {
 }
 
 
-/* ==============================
-   ANIMATIONS
-================================ */
+/* ANIMATIONS*/
 
 @keyframes trainUpper {
 
@@ -428,9 +412,7 @@ body {
 }
 
 
-/* ==============================
-   SEARCH SECTION
-================================ */
+/* SEARCH SECTION*/
 
 .search-section {
     padding: 60px 50px;
@@ -457,9 +439,7 @@ body {
 }
 
 
-/* ==============================
-   FORM
-================================ */
+/* FORM*/
 
 .form-group {
     margin-bottom: 22px;
@@ -476,9 +456,7 @@ body {
 }
 
 
-/* ==============================
-   SEARCHABLE STATION INPUT
-================================ */
+/* SEARCHABLE STATION INPUT*/
 
 /* Source & Destination Station Boxes */
 
@@ -540,9 +518,7 @@ body {
 }
 
 
-/* ==============================
-   SEARCH BUTTON
-================================ */
+/* SEARCH BUTTON*/
 
 .search-btn {
     width: 100%;
@@ -578,9 +554,7 @@ body {
 }
 
 
-/* ==============================
-   SEARCH INFO
-================================ */
+/* SEARCH INFO*/
 
 .search-info {
     margin-top: 25px;
@@ -599,9 +573,7 @@ body {
 }
 
 
-/* ==============================
-   WELCOME POPUP
-================================ */
+/* WELCOME POPUP*/
 
 .welcome-overlay {
     position: fixed;
@@ -706,9 +678,7 @@ body {
 }
 
 
-/* ==============================
-   FOOTER
-================================ */
+/* FOOTER*/
 
 footer {
     text-align: center;
@@ -749,9 +719,7 @@ footer {
 }
 
 
-/* ==============================
-   RESPONSIVE MAIN PAGE
-================================ */
+/* RESPONSIVE MAIN PAGE*/
 
 @media (max-width: 800px) {
 
@@ -778,9 +746,7 @@ footer {
 }
 
 
-/* ==============================
-   RESULTS PAGE
-================================ */
+/* RESULTS PAGE*/
 
 .results-wrapper {
     width: 80%;
@@ -842,9 +808,7 @@ footer {
 }
 
 
-/* ==============================
-   RESULTS TABLE
-================================ */
+/* RESULTS TABLE*/
 
 .table-container {
     width: 100%;
@@ -905,9 +869,7 @@ footer {
 }
 
 
-/* ==============================
-   TRAIN NUMBER
-================================ */
+/* TRAIN NUMBER*/
 
 .train-number {
     font-weight: bold;
@@ -916,9 +878,7 @@ footer {
 }
 
 
-/* ==============================
-   JOURNEY DURATION
-================================ */
+/* JOURNEY DURATION*/
 
 .duration {
     font-weight: bold;
@@ -927,9 +887,7 @@ footer {
 }
 
 
-/* ==============================
-   RESULTS FOOTER
-================================ */
+/* RESULTS FOOTER*/
 
 .results-footer {
     text-align: center;
@@ -938,9 +896,7 @@ footer {
 }
 
 
-/* ==============================
-   NO RESULTS
-================================ */
+/* NO RESULTS*/
 
 .no-results {
     text-align: center;
@@ -967,9 +923,7 @@ footer {
 }
 
 
-/* ==============================
-   RESULTS MOBILE
-================================ */
+/* RESULTS MOBILE*/
 
 @media (max-width: 800px) {
 
@@ -987,9 +941,7 @@ footer {
 
 }
 
-/* ==============================
-   BACK / SEARCH AGAIN BUTTON
-================================ */
+/* BACK / SEARCH AGAIN BUTTON*/
 
 .back-btn {
     display: inline-block;
