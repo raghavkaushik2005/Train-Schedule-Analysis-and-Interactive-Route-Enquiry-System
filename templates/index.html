@@ -8,8 +8,7 @@
 
     <title>Train Schedule Analysis and Interactive Route Enquiry System</title>
 
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
 </head>
 
@@ -22,7 +21,7 @@
         <div class="welcome-box">
 
             <div class="welcome-icon">
-                🇮🇳 🚆
+                <img src="{{ url_for('static', filename='train.jpg') }}" alt="Train Image">
             </div>
 
             <h1>
@@ -38,9 +37,7 @@
                 and view estimated journey duration.
             </p>
 
-            <button
-                class="welcome-btn"
-                onclick="enterSystem()">
+            <button class="welcome-btn" onclick="enterSystem()">
                 Enter Train Enquiry
             </button>
 
@@ -58,7 +55,7 @@
             <div class="navbar-brand">
 
                 <div class="brand-icon">
-                    🚆
+                    <img src="{{ url_for('static', filename='train.jpg') }}" alt="Train Image">
                 </div>
 
                 <div class="brand-text">
@@ -99,8 +96,8 @@
 
             <div class="railway-section">
 
-                <div class="railway-icon-large">
-                    🚆
+                <div class="railway-image">
+                    <img src="{{ url_for('static', filename='train.jpg') }}" alt="Train Image">
                 </div>
 
                 <h1>
@@ -163,14 +160,8 @@
                             Source Station
                         </label>
 
-                        <input
-                            type="text"
-                            name="source"
-                            id="source"
-                            list="station-list"
-                            placeholder="Search source station..."
-                            autocomplete="off"
-                            required>
+                        <input type="text" name="source" id="source" list="station-list"
+                            placeholder="Search source station..." autocomplete="off" required>
                     </div>
 
 
@@ -180,17 +171,11 @@
                             Destination Station
                         </label>
 
-                        <input
-                            type="text"
-                            name="destination"
-                            id="destination"
-                            list="station-list"
-                            placeholder="Search destination station..."
-                            autocomplete="off"
-                            required>
+                        <input type="text" name="destination" id="destination" list="station-list"
+                            placeholder="Search destination station..." autocomplete="off" required>
 
                     </div>
-                    
+
                     <datalist id="station-list">
 
                         {% for station in stations %}
@@ -201,9 +186,7 @@
 
                     </datalist>
 
-                    <button
-                        type="submit"
-                        class="search-btn">
+                    <button type="submit" class="search-btn">
 
                         🔍 Search Trains
 

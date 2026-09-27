@@ -89,10 +89,16 @@ body {
 
 
 .brand-icon {
-
-    font-size: 35px;
-
-    line-height: 1;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.brand-icon img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
 }
 
 
@@ -180,10 +186,6 @@ body {
         font-size: 18px;
     }
 
-    .brand-icon {
-        font-size: 29px;
-    }
-
 }
 
 
@@ -266,11 +268,21 @@ body {
     right: -120px;
 }
 
-.railway-icon-large {
-    font-size: 70px;
-    margin-bottom: 20px;
+.railway-image {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 25px;
     position: relative;
     z-index: 1;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.railway-image img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
 }
 
 .railway-section h1 {
@@ -622,9 +634,14 @@ body {
 }
 
 .welcome-icon {
-    font-size: 55px;
-
     margin-bottom: 15px;
+}
+
+.welcome-icon img{
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 .welcome-box h1 {
