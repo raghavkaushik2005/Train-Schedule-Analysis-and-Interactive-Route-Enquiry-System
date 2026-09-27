@@ -244,7 +244,23 @@
 
             overlay.classList.add("hide");
 
+            sessionStorage.setItem("welcomeShown", "true");
+
         }
+
+
+        window.addEventListener("DOMContentLoaded", function () {
+
+            const overlay =
+                document.getElementById("welcomeOverlay");
+
+            if (sessionStorage.getItem("welcomeShown") === "true") {
+
+                overlay.classList.add("hide");
+
+            }
+
+        });
 
     </script>
 
