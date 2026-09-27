@@ -588,7 +588,7 @@ body {
 /* WELCOME POPUP*/
 
 .welcome-overlay {
-    visibility: hidden;
+    
     position: fixed;
 
     inset: 0;
@@ -605,10 +605,6 @@ body {
     z-index: 9999;
 
     transition: opacity 0.4s ease;
-}
-
-.welcome-overlay.show {
-    visibility: visible;
 }
 
 .welcome-overlay.hide {

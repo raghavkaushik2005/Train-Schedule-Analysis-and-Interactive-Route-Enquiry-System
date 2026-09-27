@@ -234,32 +234,16 @@
 
 
     <!-- Welcome Popup Script -->
-
     <script>
 
         function enterSystem() {
 
-            const overlay =
-                document.getElementById("welcomeOverlay");
+        const overlay =
+            document.getElementById("welcomeOverlay");
 
-            overlay.classList.remove("show");
-            sessionStorage.setItem("welcomeShown", "true");
+        overlay.classList.add("hide");
 
         }
-
-
-        window.addEventListener("DOMContentLoaded", function () {
-
-            const overlay =
-                document.getElementById("welcomeOverlay");
-
-            if (sessionStorage.getItem("welcomeShown") !== "true") {
-
-                overlay.classList.add("show");
-
-            }
-
-        });
 
     </script>
 
