@@ -242,8 +242,7 @@
             const overlay =
                 document.getElementById("welcomeOverlay");
 
-            overlay.classList.add("hide");
-
+            overlay.classList.remove("show");
             sessionStorage.setItem("welcomeShown", "true");
 
         }
@@ -254,9 +253,9 @@
             const overlay =
                 document.getElementById("welcomeOverlay");
 
-            if (sessionStorage.getItem("welcomeShown") === "true") {
+            if (sessionStorage.getItem("welcomeShown") !== "true") {
 
-                overlay.classList.add("hide");
+                overlay.classList.add("show");
 
             }
 
