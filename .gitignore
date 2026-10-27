@@ -1,5 +1,6 @@
 .env
 venv/
+venv_old/
 __pycache__/
 *.pyc
 my own.csv
